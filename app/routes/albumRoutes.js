@@ -13,7 +13,7 @@ router.route('/')
     });
 
 // GET /albums/:id
-router.route(':id')
+router.route('/:id')
     .get(function (req, res) {
         Album.findById({_id: req.params.id}, function (err, album) {
             if (err) {
@@ -24,13 +24,6 @@ router.route(':id')
     });
 
 // POST /albums
-/*
-router.route('').post( function (req, res) {
-    console.log('########################################################################""');
-    new Album(req.body).save((err, album) => {
-        res.json({data: album});
-    });
-});*/
 router.route('')
     .post(function (req, res) {
         const album = new Album({
@@ -56,7 +49,7 @@ router.route('')
     });
 
 // PUT /albums/:id
-router.route(':id')
+router.route('/:id')
     .put(function (req, res) {
         const update = {};
 
@@ -73,7 +66,7 @@ router.route(':id')
     });
 
 // DELETE /albums/:id
-router.route(':id')
+router.route('/:id')
     .delete(function (req, res) {
         Album.remove({'_id': req.params.id}, function (err) {
             if (err) res.status('500').send(err);

@@ -27,7 +27,7 @@ app.get('/', function (req, res) {
 const albumRoutes = require("./app/routes/albumRoutes");
 const purchaseRoutes = require("./app/routes/purchaseRoutes");
 
-app.use('/albums', albumRoutes);
+app.use('/albums/', albumRoutes);
 app.use('/purchases/', purchaseRoutes);
 
 app.listen(port, function (err) {
